@@ -22,7 +22,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-[#0d131a] text-white flex items-center overflow-hidden relative">
+    <section className="w-full min-h-[500px] bg-[#0d131a] text-white flex items-center overflow-hidden relative">
       {/* Background Image Slider with Ambient Glow */}
       <div className="absolute inset-0 z-0">
         {backgroundImages.map((img, index) => (
@@ -42,7 +42,7 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d131a] via-[#0d131a]/90 to-transparent z-10" />
       </div>
 
-      <div className="relative z-20 w-full max-w-[1450px] mx-auto px-6 md:px-12 lg:px-16 py-24">
+      <div className="relative z-20 w-full max-w-[1450px] mx-auto px-6 md:px-12 lg:px-16 py-15">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Core Value Proposition */}

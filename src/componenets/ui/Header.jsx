@@ -25,7 +25,7 @@ export default function Header() {
         {/* Left: Logo */}
         <div className="flex items-center">
           <a href="#" className="flex items-center">
-            <img src="/new-logo.webp" alt="Logo" className="h-14 w-14 sm:h-16 sm:w-16 object-contain" />
+            <img src="/new-logo.webp" alt="Logo" className="h-20 w-20 sm:h-24 sm:w-24 object-contain" />
           </a>
         </div>
 
@@ -47,7 +47,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <a 
             href="#contact" 
-            className="hidden md:inline-flex px-5 py-2.5 bg-[#111827] hover:bg-[#9a8b50] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
+            className="hidden md:inline-flex px-5 py-2.5 bg-[#111827] hover:bg-[#9a8b50] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm rounded-sm"
           >
             Have A Question?
           </a>
@@ -81,8 +81,7 @@ export default function Header() {
       >
         <div className="flex items-center justify-between border-b border-gray-100 pb-6">
           <div className="flex items-center gap-2">
-            <img src="/new-logo.webp" alt="Logo" className="h-10 w-10 object-contain" />
-            <span className="font-serif font-bold text-sm tracking-wide">Pugh & Karpov</span>
+            <img src="/new-logo.webp" alt="Logo" className="h-28 w-28 object-contain" />
           </div>
           <button
             type="button"

@@ -14,7 +14,11 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed inset-x-0 top-0 z-[60] w-full bg-transparent flex flex-col">
+    <>
+    <div className=" inset-x-0 top-0 z-[60] w-full bg-transparent flex flex-col">
+        <div className='bg-[#111827] p-3 text-white text-lg font-semibold text-center'>
+            <h2>Pugh & Karpov Law, PC</h2>
+        </div>
       {/* Header Container */}
       <header className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 sm:px-6 md:px-28 py-3 flex items-center justify-between shadow-sm transition-all">
         
@@ -120,5 +124,6 @@ export default function Header() {
         </div>
       </aside>
     </div>
+    </>
   );
 }

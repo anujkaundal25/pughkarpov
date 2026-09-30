@@ -16,6 +16,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Pugh & Karpov Law, PC",
   description: "Pugh & Karpov Law, PC",
+  icons: {
+    icon: "/new-logo.webp",
+  },
 };
 
 export default function RootLayout({ children }) {

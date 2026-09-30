@@ -1,5 +1,10 @@
-import { EB_Garamond, Poppins } from "next/font/google";
+import { EB_Garamond, Poppins, Dancing_Script } from "next/font/google";
 import "./globals.css";
+
+// const dancingScript = Dancing_Script({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+// });
 
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
@@ -16,9 +21,6 @@ const poppins = Poppins({
 export const metadata = {
   title: "Pugh & Karpov Law, PC",
   description: "Pugh & Karpov Law, PC",
-  icons: {
-    icon: "/new-logo.webp",
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -27,7 +29,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${ebGaramond.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

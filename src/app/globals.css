@@ -37,3 +37,7 @@ h6 {
 p {
   font-family: var(--font-poppins), sans-serif;
 }
+.style {
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+}

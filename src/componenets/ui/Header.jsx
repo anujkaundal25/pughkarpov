@@ -7,37 +7,39 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    'HOME',
-    'BANKRUPTCY',
-    'CRIMINAL AND TRAFFIC DEFENSE',
-    'PERSONAL INJURY',
+    { label: 'HOME', href: '/' },
+    { label: 'CIVIL LITIGATION', href: '#practice-areas' },
+    { label: 'PERSONAL INJURY', href: '#practice-areas' },
+    { label: 'BANKRUPTCY', href: '#practice-areas' },
+    { label: 'CRIMINAL & TRAFFIC DEFENSE', href: '#practice-areas' },
   ];
 
   return (
     <>
-    <div className=" inset-x-0 top-0 z-[60] w-full bg-transparent flex flex-col">
-        <div className='bg-[#111827] p-3 text-white text-lg font-semibold text-center'>
+    <div className="relative z-50 w-full bg-white flex flex-col">
+      <div className='bg-[#111827] px-4 py-3 text-white text-xl font-semibold text-center flex flex-col items-center gap-2'>
             <h2>Pugh & Karpov Law, PC</h2>
+            <span className="mx-auto mb-3 block h-[1px] w-40 bg-yellow-400" />
         </div>
       {/* Header Container */}
-      <header className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 sm:px-6 md:px-28 py-3 flex items-center justify-between shadow-sm transition-all">
+      <header className="w-full bg-white border-b border-[#e6e9ed] px-4 sm:px-6 lg:px-10 xl:px-16 py-2 flex items-center justify-between shadow-sm">
         
         {/* Left: Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center pl-23">
           <a href="#" className="flex items-center">
-            <img src="/new-logo.webp" alt="Logo" className="h-20 w-20 sm:h-24 sm:w-24 object-contain" />
+            <img src="/new-logo.webp" alt="Pugh & Karpov Law, PC" className="h-14 w-14 sm:h-28 sm:w-44 object-contain" />
           </a>
         </div>
 
         {/* Center: Desktop Navigation Menu */}
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 mx-auto">
-          {menuItems.map((menu, index) => (
+          {menuItems.map((menu) => (
             <a 
-              key={index} 
-              href="#" 
-              className="text-[12px] xl:text-[13px] font-semibold tracking-wider text-[#111827] hover:text-[#9a8b50] transition-colors relative py-1 group"
+              key={menu.label}
+              href={menu.href}
+              className="text-[12px] xl:text-[13px] font-semibold tracking-wider text-[#111827] hover:text-yellow-400 transition-colors relative py-1 group"
             >
-              {menu}
+              {menu.label}
               <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[#9a8b50] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
             </a>
           ))}
@@ -47,7 +49,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <a 
             href="#contact" 
-            className="hidden md:inline-flex px-5 py-2.5 bg-[#111827] hover:bg-[#9a8b50] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm rounded-sm"
+            className="hidden md:inline-flex px-5 py-2.5 bg-yellow-400 hover:bg-[#111827] text-[#111827] text-[11px] font-bold uppercase tracking-wide transition-colors shadow-sm rounded-md"
           >
             Have A Question?
           </a>
@@ -97,15 +99,15 @@ export default function Header() {
         {/* Navigation Menu Items & Button Container */}
         <div className="mt-6 overflow-y-auto flex-1 flex flex-col justify-between" aria-label="Main navigation">
           <ul className="flex flex-col space-y-1">
-            {menuItems.map((menu, index) => (
-              <li key={index}>
+            {menuItems.map((menu) => (
+              <li key={menu.label}>
                 <a
-                  href="#"
+                  href={menu.href}
                   onClick={() => setIsOpen(false)}
                   tabIndex={isOpen ? 0 : -1}
                   className="block border-b border-gray-100 py-4 font-serif text-base sm:text-lg transition-colors hover:text-[#9a8b50]"
                 >
-                  {menu}
+                  {menu.label}
                 </a>
               </li>
             ))}

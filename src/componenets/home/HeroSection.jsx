@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { FaArrowRight, FaLock } from "react-icons/fa6";
 
 const backgroundImages = [
   "/hero/1.webp",
@@ -22,14 +23,14 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="w-full min-h-[500px] bg-[#0d131a] text-white flex items-center overflow-hidden relative">
+    <section className="w-full min-h-[610px] bg-[#111827] text-white flex items-center overflow-hidden relative">
       {/* Background Image Slider with Ambient Glow */}
       <div className="absolute inset-0 z-0">
         {backgroundImages.map((img, index) => (
           <div
             key={img}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "opacity-25" : "opacity-0"
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? "opacity-55" : "opacity-0"
             }`}
           >
             <img
@@ -39,28 +40,30 @@ function HeroSection() {
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d131a] via-[#0d131a]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111827]/95 via-[#111827]/55 to-[#111827]/10 z-10" />
       </div>
 
-      <div className="relative z-20 w-full max-w-[1450px] mx-auto px-6 md:px-12 lg:px-16 py-15">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-12 py-14 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Core Value Proposition */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9a8b50]/15 border border-[#9a8b50]/30 text-[#9a8b50] text-xs font-semibold tracking-widest uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#9a8b50]" />
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 text-white text-[11px] font-semibold tracking-[0.18em] uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-white" />
               Pugh & Karpov Law, PC
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.15] tracking-wide uppercase">
-              CRIMINAL AND <br />
-              <span className="text-[#9a8b50]">TRAFFIC DEFENSE</span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] leading-[1.02] uppercase">
+              CIVIL LITIGATION <br />
+              <span className="text-yellow-400">&amp; PERSONAL INJURY</span>
             </h1>
 
-            <p className="text-gray-300 text-base md:text-lg max-w-xl font-light leading-relaxed">
-              We bring 45 years of combined trial experience defending adult and juvenile criminal charges and traffic offenses in Virginia Beach, Norfolk, Chesapeake and other courts of the Tidewater area.  
+            <p className="text-white/85 text-sm md:text-base max-w-xl font-light leading-7">
+              Pugh &amp; Karpov provides experienced courtroom advocacy in civil litigation, personal injury, bankruptcy, and criminal and traffic defense throughout the Tidewater area.
             </p>
-            <button className="bg-[#9a8b50] px-10 py-1 rounded-sm text-xl cursor-pointer">View More</button>
+            <a href="#practice-areas" className="inline-flex items-center gap-3 rounded-lg bg-white px-7 py-3 text-[11px] font-bold tracking-wide text-[#111827] transition-colors hover:bg-white">
+              VIEW MORE <FaArrowRight aria-hidden="true" />
+            </a>
 
             {/* <div className="flex flex-wrap items-center gap-4 pt-2">
               <a 
@@ -80,13 +83,13 @@ function HeroSection() {
 
           {/* Right Column: Quick Contact Card */}
           <div className="lg:col-span-5">
-            <div className="bg-[#141d26]/90 backdrop-blur-md border border-white/10 p-8 lg:p-10 shadow-2xl relative">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#9a8b50]/10 rounded-bl-full pointer-events-none" />
+            <div className="relative bg-[#111827]/95 border border-white/20 p-6 sm:p-8 shadow-2xl rounded-b-lg">
+              <div className="absolute inset-x-0 top-0 h-1 bg-white" />
               
-              <h3 className="font-serif text-2xl text-white uppercase tracking-wide mb-2">
+              <h2 className="font-serif text-2xl text-white uppercase mb-2">
                 Request a Callback
-              </h3>
-              <p className="text-gray-400 text-sm mb-6">
+              </h2>
+              <p className="text-white/65 text-xs mb-5">
                 Speak directly with a personal legal consultant today.
               </p>
 
@@ -96,7 +99,7 @@ function HeroSection() {
                   <input 
                     type="text" 
                     placeholder="John Doe" 
-                    className="w-full bg-black/40 border border-white/15 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#9a8b50] transition-colors"
+                    className="w-full bg-[#111827]/75 border border-white/15 px-4 py-2.5 text-xs text-white placeholder:text-white/45 focus:outline-none focus:border-[#111827] transition-colors"
                   />
                 </div>
                 <div>
@@ -104,25 +107,27 @@ function HeroSection() {
                   <input 
                     type="tel" 
                     placeholder="+1 (555) 000-0000" 
-                    className="w-full bg-black/40 border border-white/15 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#9a8b50] transition-colors"
+                    className="w-full bg-[#111827]/75 border border-white/15 px-4 py-2.5 text-xs text-white placeholder:text-white/45 focus:outline-none focus:border-[#111827] transition-colors"
                   />
                 </div>
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-gray-300 mb-1.5">Practice Area</label>
-                  <select className="w-full bg-black/40 border border-white/15 px-4 py-3 text-sm text-gray-300 focus:outline-none focus:border-[#9a8b50] transition-colors">
-                  <option className="bg-[#0d131a]">Bankruptcy</option>
-                    <option className="bg-[#0d131a]">Criminal Defense</option>
-                    <option className="bg-[#0d131a]">Traffic Tickets</option>
-                    <option className="bg-[#0d131a]">Personal Injury</option>
-                    <option className="bg-[#0d131a]">Civil Litigation</option>
+                  <select className="w-full bg-[#111827]/75 border border-white/15 px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#111827] transition-colors">
+                      <option className="bg-[#111827]">Civil Litigation</option>
+                      <option className="bg-[#111827]">Personal Injury</option>
+                      <option className="bg-[#111827]">Bankruptcy</option>
+                      <option className="bg-[#111827]">Criminal &amp; Traffic Defense</option>
                   </select>
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full py-4 bg-white text-black hover:bg-gray-200 font-semibold tracking-wider uppercase text-sm transition-all mt-2 cursor-pointer"
+                  className="w-full py-3 bg-white text-[#111827] hover:bg-white font-bold tracking-wide uppercase text-[11px] transition-all mt-2 cursor-pointer"
                 >
                   Submit Inquiry
                 </button>
+                <p className="flex items-center justify-center gap-2 text-[10px] text-white/55">
+                  <FaLock aria-hidden="true" /> Your information is confidential.
+                </p>
               </form>
             </div>
           </div>
